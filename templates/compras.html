@@ -2,5 +2,10 @@
 {% extends "_base.html" %}
 
 {% block conteudo %}
-página de compras {{ titulo }}
+página de {{ titulo }}
+<ul>
+    {% for compra in compras %}
+        <li>{{compra.item}}</li>
+    {% endfor %}
+</ul>
 {% endblock %}
