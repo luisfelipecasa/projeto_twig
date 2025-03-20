@@ -1,0 +1,13 @@
+{% extends "_base.html" %}
+
+{% block conteudo %}
+página de {{ titulo }}
+
+<h3>editar item</h3>
+<form action="edit.php" method="POST">
+    <input type="hidden" name="id" value="{{item.id}}">
+    <input type="text" name="item" placeholder="Escreva o novo nome do item"">
+    <input type="submit" value="Editar">
+</form>
+
+{% endblock %}
