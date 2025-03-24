@@ -7,10 +7,10 @@ $item = $_POST['item'] ?? null;
 
 if($item){
     //prepara a consulta
-    $query = $pdo->prepare('UPDATE item FROM compras SET ');
+    $query = $pdo->prepare('INSERT INTO compras (item) VALUES (:item)');
 
     //associa os valores dentro da consulta
-    $query->bindValue(':it' , $item);
+    $query->bindValue(':item' , $item);
 
     //executa a consulta
     $query->execute();
