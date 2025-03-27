@@ -1,5 +1,4 @@
 <?php
-//compras_adc.php
 
 require('inc/banco.php');
 

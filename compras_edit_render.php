@@ -13,7 +13,7 @@ $dados->execute();
 
 $item = $dados->fetch(PDO::FETCH_ASSOC);
 
-echo $twig->render('editar.html' , [
-    'titulo' => 'editar',
+echo $twig->render('compras_editar.html' , [
+    'titulo' => 'editar item',
     'item' => $item
 ]);

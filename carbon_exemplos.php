@@ -32,3 +32,6 @@ if(Carbon::now()->addDay(4)->isWeekend()){
 //Calcular diferença entre datas
 $nascimento = Carbon::createFromDate(2007, 05, 02);
 echo 'diferença de data: ' . Carbon::now()->diff($nascimento);
+
+$data_aleatoria = "2024-04-05";
+$data = Carbon::parse($data_aleatoria);
