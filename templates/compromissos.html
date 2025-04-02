@@ -13,7 +13,9 @@ página de {{ titulo }}
 </form>
 
 <h3>Minha lista de compromissos</h3>
-<button href="compromissos.php?data=recente">Ordenar pelo mais recente</button>
+<a href="compromissos.php?data=recente">Mais próximo</a> | 
+<a href="compromissos.php?data=distante">Mais distante</a> |
+<a href="compromissos.php?data=alfabeto">Ordem alfabética</a>
 <ul>
     {% for compromisso in compromissos %}
         <li>{{compromisso.titulo}} <br> {{compromisso.data}} <br> 
