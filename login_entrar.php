@@ -5,19 +5,18 @@ require('inc/banco.php');
 $login = $_POST['login'] ?? null;
 $senha = $_POST['senha'] ?? null;
 
-if($login && $senha){
-       $query = $pdo->prepare('SELECT * FROM usuarios WHERE login = :login AND senha = :senha');
+if ($login && $senha) {
+    $query = $pdo->prepare('SELECT * FROM usuarios WHERE login = :login');
+    $query->execute([':login' => $login]);
 
-       $query->execute([
-           ':login' => $login,
-           ':senha' => password_verify($senha, PASSWORD_DEFAULT)
-       ]);
+    $usuario = $query->fetch(PDO::FETCH_ASSOC);
 
-       $usuario = $query->fetch(PDO::FETCH_ASSOC);
-       if ($usuario){
+    if ($usuario && password_verify($senha, $usuario['senha'])) {
         session_start();
         $_SESSION['usuario'] = $usuario;
-       }
 
-       header('location:index.php');
+        header('Location: index.php');
+    } else {
+        header('Location: login.php?erro=1');
+    }
 }

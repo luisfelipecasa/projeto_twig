@@ -1,5 +1,7 @@
 <?php
 
+require('verificar_login.php');
+
 //compras.php
 require_once('twig_carregar.php');
 require('inc/banco.php');
