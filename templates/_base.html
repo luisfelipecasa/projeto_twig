@@ -8,7 +8,12 @@
     <title>Super Twig</title>
 </head>
 <body>
-    <h1>Super Site Twig Master</h1>
+    {% if usuario %}
+    <h1>Bem vindo(a) {{ usuario }}!</h1>
+    {% endif %}
+
+
+    <h2>Super Site Twig Master</h2>
 
     {% if titulo %}
     <h2>{{ titulo }}</h2>
@@ -19,7 +24,8 @@
     <a href="compras.php">Compras</a> |
     <a href="horario.php">Horario</a> |
     <a href="compromissos.php">Lista de compromissos</a> |
-    <a href="logout.php">Logout</a>
+    <a href="logout.php">Logout</a> |
+    <a href="alterar_senha.php">Alterar senha</a>
     <hr>
 
     {% block conteudo %}{% endblock %}
